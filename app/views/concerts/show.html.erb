@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Concert #<%= @the_concert.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/concerts">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_concert/<%= @the_concert.id %>">
+          Delete concert
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @the_concert.date %>
+      </dd>
+
+      <dt>
+        City
+      </dt>
+      <dd>
+        <%= @the_concert.city %>
+      </dd>
+
+      <dt>
+        Artist
+      </dt>
+      <dd>
+        <%= @the_concert.artist_id %>
+      </dd>
+
+      <dt>
+        Tour
+      </dt>
+      <dd>
+        <%= @the_concert.tour_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_concert.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_concert.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit concert
+    </h2>
+
+    <form action="/modify_concert/<%= @the_concert.id %>"  method="post" >
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="date" id="date_box" name="query_date" value="<%= @the_concert.date %>">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city" value="<%= @the_concert.city %>">
+      </div>
+
+      <div>
+        <label for="artist_id_box">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id_box" name="query_artist_id" value="<%= @the_concert.artist_id %>">
+      </div>
+
+      <div>
+        <label for="tour_id_box">
+          Tour
+        </label>
+
+        <input type="text" id="tour_id_box" name="query_tour_id" value="<%= @the_concert.tour_id %>">
+      </div>
+
+      <button>
+        Update concert
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

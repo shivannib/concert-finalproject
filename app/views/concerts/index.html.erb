@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all concerts
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new concert
+    </h2>
+
+    <form action="/insert_concert" method="post">
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="date" id="date_box" name="query_date">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city">
+      </div>
+
+      <div>
+        <label for="artist_id_box">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id_box" name="query_artist_id">
+      </div>
+
+      <div>
+        <label for="tour_id_box">
+          Tour
+        </label>
+
+        <input type="text" id="tour_id_box" name="query_tour_id">
+      </div>
+
+      <button>
+        Create concert
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Date
+        </th>
+
+        <th>
+          City
+        </th>
+
+        <th>
+          Artist
+        </th>
+
+        <th>
+          Tour
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_concerts.each do |a_concert| %>
+      <tr>
+        <td>
+          <%= a_concert.id %>
+        </td>
+
+        <td>
+          <%= a_concert.date %>
+        </td>
+
+        <td>
+          <%= a_concert.city %>
+        </td>
+
+        <td>
+          <%= a_concert.artist_id %>
+        </td>
+
+        <td>
+          <%= a_concert.tour_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_concert.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_concert.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/concerts/<%= a_concert.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

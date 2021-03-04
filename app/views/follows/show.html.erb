@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Follow #<%= @the_follow.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/follows">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_follow/<%= @the_follow.id %>">
+          Delete follow
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_follow.user_id %>
+      </dd>
+
+      <dt>
+        Artist
+      </dt>
+      <dd>
+        <%= @the_follow.artist_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_follow.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_follow.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit follow
+    </h2>
+
+    <form action="/modify_follow/<%= @the_follow.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_follow.user_id %>">
+      </div>
+
+      <div>
+        <label for="artist_id_box">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id_box" name="query_artist_id" value="<%= @the_follow.artist_id %>">
+      </div>
+
+      <button>
+        Update follow
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

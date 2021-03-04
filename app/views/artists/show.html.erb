@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Artist #<%= @the_artist.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/artists">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_artist/<%= @the_artist.id %>">
+          Delete artist
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_artist.name %>
+      </dd>
+
+      <dt>
+        Genre
+      </dt>
+      <dd>
+        <%= @the_artist.genre %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_artist.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_artist.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit artist
+    </h2>
+
+    <form action="/modify_artist/<%= @the_artist.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_artist.name %>">
+      </div>
+
+      <div>
+        <label for="genre_box">
+          Genre
+        </label>
+
+        <input type="text" id="genre_box" name="query_genre" value="<%= @the_artist.genre %>">
+      </div>
+
+      <button>
+        Update artist
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
