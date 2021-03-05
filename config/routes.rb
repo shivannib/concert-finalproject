@@ -95,6 +95,8 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_concert/:path_id", { :controller => "concerts", :action => "destroy" })
 
+  get("/saved_concerts", { :controller => "concerts", :action => "bookmarked_concerts" })
+
   #------------------------------
 
   # Routes for the User account:
@@ -123,5 +125,7 @@ Rails.application.routes.draw do
   get("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
              
   #------------------------------
+
+  get("/user_profile", { :controller => "user_authentication", :action => "my_profile" })
 
 end

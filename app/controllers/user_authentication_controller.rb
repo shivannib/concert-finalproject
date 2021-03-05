@@ -5,6 +5,10 @@ class UserAuthenticationController < ApplicationController
   def home
     render({ :template => "user_authentication/home.html.erb" })
   end
+
+  def my_profile
+    render({ :template => "user_authentication/my_profile.html.erb" })
+  end
   
   def sign_in_form
     render({ :template => "user_authentication/sign_in.html.erb" })

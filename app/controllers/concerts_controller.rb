@@ -57,4 +57,9 @@ class ConcertsController < ApplicationController
 
     redirect_to("/concerts", { :notice => "Concert deleted successfully."} )
   end
+
+  def bookmarked_concerts
+    render({ :template => "concerts/bookmarked_concerts.html.erb" })
+  end
+
 end
