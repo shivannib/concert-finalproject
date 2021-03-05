@@ -23,6 +23,7 @@
         </a>
       </li>
 
+      <% if @current_user == nil %>
       <li>
         <a href="/user_sign_up">
           Sign Up
@@ -35,6 +36,12 @@
         </a>
       </li>
 
+      <% else %>
+      
+      <li>
+        Welcome back, <%= @current_user.name %>
+      </li>
+      
       <li>
         <a href="/user_sign_out">
           Sign Out
@@ -52,6 +59,7 @@
           Saved Concerts
         </a>
       </li>
+      <% end %>
 
     <%= yield %>
   </body>
