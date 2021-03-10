@@ -88,6 +88,19 @@ class UserAuthenticationController < ApplicationController
     end
   end
 
+  def update_home_city
+    @user = @current_user
+    @user.home_city = params.fetch("query_home_city")
+
+    if @user.valid?
+      @user.save
+
+      redirect_to("/user_profile", { :notice => "User account updated successfully."})
+    else
+      render({ :template => "user_authentication/edit_profile_with_errors.html.erb" })
+    end
+  end
+
   def destroy
     @current_user.destroy
     reset_session

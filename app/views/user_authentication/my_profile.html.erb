@@ -1,1 +1,15 @@
-this is my profile
+<div>
+  Home City: <%= @current_user.home_city %>
+</div>
+
+<div>
+    <form action="/modify_home_city" method="post">
+    
+    <label for="home_city_box">Home city</label>
+    <input id="home_city_box" name="query_home_city" placeholder="Enter a new home city">
+
+    <button>
+        Update home city
+    </button>
+  </form>
+</div>
