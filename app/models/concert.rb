@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  city       :string
-#  date       :date
+#  date       :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  artist_id  :integer

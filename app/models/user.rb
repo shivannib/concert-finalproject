@@ -20,4 +20,8 @@ class User < ApplicationRecord
   has_many(:follows, { :class_name => "Follow", :foreign_key => "user_id", :dependent => :destroy })
 
   has_many(:interests, { :class_name => "Interest", :foreign_key => "user_id", :dependent => :destroy })
+
+  phony_normalize :phone_number, default_country_code: 'US'
+
+  validates :phone_number, phony_plausible: true
 end

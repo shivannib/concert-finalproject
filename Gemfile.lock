@@ -199,6 +199,10 @@ GEM
     oj (3.10.8)
     orm_adapter (0.5.0)
     pg (1.2.3)
+    phony (2.18.19)
+    phony_rails (0.14.13)
+      activesupport (>= 3.0)
+      phony (> 2.15)
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
     pry (0.13.1)
@@ -369,6 +373,7 @@ DEPENDENCIES
   listen (~> 3.2)
   nokogiri (>= 1.10.8)
   pg
+  phony_rails
   pry-rails
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)

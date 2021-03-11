@@ -11,13 +11,12 @@
     <div class="collapse navbar-collapse" id="collapsible-nav-links">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
+        <% if @current_user == nil %>
+        <% else %>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <% if @current_user == nil %>
-            Sign in to continue!
-            <% else %>
             <a href="/interests" class="dropdown-item">
               Interests
             </a>
@@ -36,8 +35,8 @@
             <a href="/saved_concerts" class="dropdown-item">
               Saved Concerts
             </a>
-            <% end %>
           </div>
+        <% end %>
         </li>
       </ul>
     </div> <!-- .navbar-collapse -->

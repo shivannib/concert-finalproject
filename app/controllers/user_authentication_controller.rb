@@ -6,6 +6,10 @@ class UserAuthenticationController < ApplicationController
     render({ :template => "user_authentication/home.html.erb" })
   end
 
+  def main_blank
+    render({ :template => "user_authentication/mainblank.html.erb" })
+  end
+
   def my_profile
     render({ :template => "user_authentication/my_profile.html.erb" })
   end
@@ -82,7 +86,7 @@ class UserAuthenticationController < ApplicationController
     if @user.valid?
       @user.save
 
-      redirect_to("/", { :notice => "User account updated successfully."})
+      redirect_to("/user_profile", { :notice => "User account updated successfully."})
     else
       render({ :template => "user_authentication/edit_profile_with_errors.html.erb" })
     end
