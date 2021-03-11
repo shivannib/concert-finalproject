@@ -3,13 +3,30 @@
 </div>
 
 <div>
-    <form action="/modify_home_city" method="post">
+  Phone Number: <%= @current_user.phone_number %>
+</div>
+
+
+<div>
+  <form action="/modify_home_city" method="post">
     
     <label for="home_city_box">Home city</label>
     <input id="home_city_box" name="query_home_city" placeholder="Enter a new home city">
 
     <button>
         Update home city
+    </button>
+  </form>
+</div>
+
+<div>
+  <form action="/modify_phone_number" method="post">
+    
+    <label for="phone_number_box">Phone Number</label>
+    <input id="phone_number_box" name="query_phone_number" placeholder="Enter a new phone number">
+
+    <button>
+        Update phone number
     </button>
   </form>
 </div>

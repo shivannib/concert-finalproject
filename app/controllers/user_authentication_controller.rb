@@ -95,7 +95,20 @@ class UserAuthenticationController < ApplicationController
     if @user.valid?
       @user.save
 
-      redirect_to("/user_profile", { :notice => "User account updated successfully."})
+      redirect_to("/user_profile", { :notice => "Home city updated successfully."})
+    else
+      render({ :template => "user_authentication/edit_profile_with_errors.html.erb" })
+    end
+  end
+
+  def update_phone_number
+    @user = @current_user
+    @user.phone_number = params.fetch("query_phone_number")
+
+    if @user.valid?
+      @user.save
+
+      redirect_to("/user_profile", { :notice => "Phone number updated successfully."})
     else
       render({ :template => "user_authentication/edit_profile_with_errors.html.erb" })
     end
