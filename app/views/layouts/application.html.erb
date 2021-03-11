@@ -29,16 +29,11 @@
 </head>
 
 <body>
+ 
   <%= render "shared/navbar" %>
 
   <div class="container">
     <%= render "shared/flashes" %>
-
-      <li>
-        <a href="/">
-          Home
-        </a>
-      </li>
 
       <% if @current_user == nil %>
       <li>
@@ -58,10 +53,10 @@
       <li>
         Welcome back, <%= @current_user.name %>
       </li>
-      
+
       <li>
-        <a href="/user_sign_out">
-          Sign Out
+        <a href="/">
+          Home
         </a>
       </li>
       
@@ -74,6 +69,12 @@
       <li>
         <a href="/saved_concerts">
           Saved Concerts
+        </a>
+      </li>
+
+      <li>
+        <a href="/user_sign_out">
+          Sign Out
         </a>
       </li>
       <% end %>
