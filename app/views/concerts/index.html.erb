@@ -36,7 +36,13 @@
           Artist
         </label>
 
-        <input type="text" id="artist_id_box" name="query_artist_id">
+        <select id="artist_id_box" name="query_artist_id">
+          <% Artist.all.order(:name).each do |an_artist| %>
+            <option value="<%= an_artist.id %>">
+              <%= an_artist.name %>
+            </option>
+          <% end %>
+        </select>
       </div>
 
       <div>
