@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   get("/", { :controller => "user_authentication", :action => "home" })
 
+  # VIEW ALL ARTISTS AND CONCERTS
+  get("/view_all", { :controller => "artists", :action => "view_everything" })
+
   # Routes for the Interest resource:
 
   # CREATE
