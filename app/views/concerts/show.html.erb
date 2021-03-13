@@ -66,6 +66,24 @@
 
 <hr>
 
+<hr>
+ <% matching_bookmarks = Interest.where({ :user_id => @current_user.id, :concert_id => @the_concert.id }) %>
+    <% the_bookmark = matching_bookmarks.at(0) %>
+    <% if the_bookmark != nil %>
+      <a href="/delete_interest/<%= the_bookmark.id %>%">
+        I'm not interested anymore
+      </a>
+    <% else %>
+      <form action="/insert_interest" method="post">
+        <input type="hidden" name="query_concert_id" value="<%= @the_concert.id %>">
+        <input type="hidden" name="query_user_id" value="<%= @current_user.id %>">
+        <button>
+          Mark your interest
+        </button>
+      </form>
+    <% end %>
+<hr>
+
 
 <div>
   <div>

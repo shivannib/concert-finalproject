@@ -60,7 +60,7 @@ class ConcertsController < ApplicationController
   end
 
   def bookmarked_concerts
-    render({ :template => "concerts/bookmarked_concerts.html.erb" })
+    redirect_to("/interests")
   end
 
 end

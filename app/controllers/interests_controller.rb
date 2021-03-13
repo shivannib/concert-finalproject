@@ -24,9 +24,9 @@ class InterestsController < ApplicationController
 
     if the_interest.valid?
       the_interest.save
-      redirect_to("/interests", { :notice => "Interest created successfully." })
+      redirect_to("/interests", { :notice => "Your interest has been successfully noted." })
     else
-      redirect_to("/interests", { :notice => "Interest failed to create successfully." })
+      redirect_to("/interests", { :notice => "Your interest has failed to be successfully noted." })
     end
   end
 
