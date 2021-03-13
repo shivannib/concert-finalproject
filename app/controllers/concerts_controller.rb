@@ -20,9 +20,10 @@ class ConcertsController < ApplicationController
   def create
     the_concert = Concert.new
     the_concert.date = params.fetch("query_date")
+    #the_concert.time = params.fetch("query_time") undefined method for time ?
     the_concert.city = params.fetch("query_city")
     the_concert.artist_id = params.fetch("query_artist_id")
-    the_concert.tour_id = params.fetch("query_tour_id")
+    #the_concert.tour_id = params.fetch("query_tour_id")
 
     if the_concert.valid?
       the_concert.save

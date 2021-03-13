@@ -23,6 +23,16 @@
         <input type="date" id="date_box" name="query_date">
       </div>
 
+      <%# <div>
+        <label for="time_box">
+          Time
+        </label>
+
+        <input type="time" id="time_box" name="query_time">
+      </div> %>
+
+      undefined method for time on concerts controller page?
+
       <div>
         <label for="city_box">
           City
@@ -121,7 +131,7 @@
 
         <%# <td>
           <%= a_concert.tour_id %>
-        <%# </td> %> %>
+        <%# </td> %>
 
         <td>
           <%= time_ago_in_words(a_concert.created_at) %> ago

@@ -40,12 +40,12 @@
         <%= @the_concert.artist_id %>
       </dd>
 
-      <dt>
+      <%# <dt>
         Tour
       </dt>
       <dd>
         <%= @the_concert.tour_id %>
-      </dd>
+      <%# </dd> %>
 
       <dt>
         Created at
@@ -98,13 +98,13 @@
         <input type="text" id="artist_id_box" name="query_artist_id" value="<%= @the_concert.artist_id %>">
       </div>
 
-      <div>
+      <%# <div>
         <label for="tour_id_box">
           Tour
         </label>
 
-        <input type="text" id="tour_id_box" name="query_tour_id" value="<%= @the_concert.tour_id %>">
-      </div>
+        <input type="text" id="tour_id_box" name="query_tour_id" value="<%= @the_concert.tour_id %>
+      <%# </div> %>
 
       <button>
         Update concert
