@@ -43,13 +43,13 @@
         Don't see your Artist here? Go <a href="/artists">here</a> to add a new artist.
       </div>
 
-      <div>
+      <%# <div>
         <label for="tour_id_box">
           Tour
         </label>
 
         <input type="text" id="tour_id_box" name="query_tour_id">
-      </div>
+      </div> %>
 
       <button>
         Create concert
@@ -79,9 +79,9 @@
           Artist
         </th>
 
-        <th>
+        <%# <th>
           Tour
-        </th>
+        </th> %>
 
         <th>
           Created at
@@ -113,9 +113,9 @@
           <%= a_concert.artist_id %>
         </td>
 
-        <td>
+        <%# <td>
           <%= a_concert.tour_id %>
-        </td>
+        <%# </td> %> %>
 
         <td>
           <%= time_ago_in_words(a_concert.created_at) %> ago
