@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get("/", { :controller => "user_authentication", :action => "home" })
+  get("/", { :controller => "concerts", :action => "home" })
 
   # Routes for the Interest resource:
 

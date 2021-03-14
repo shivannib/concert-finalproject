@@ -54,3 +54,5 @@ group :production do
 end
 
 gem 'phony_rails'
+
+gem 'ransack'

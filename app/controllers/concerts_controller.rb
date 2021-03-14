@@ -1,4 +1,9 @@
 class ConcertsController < ApplicationController
+  
+  def home
+    render({ :template => "concerts/home.html.erb" })
+  end
+  
   def index
     matching_concerts = Concert.all
 
