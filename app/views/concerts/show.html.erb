@@ -70,7 +70,7 @@
  <% matching_bookmarks = Interest.where({ :user_id => @current_user.id, :concert_id => @the_concert.id }) %>
     <% the_bookmark = matching_bookmarks.at(0) %>
     <% if the_bookmark != nil %>
-      <a href="/delete_interest/<%= the_bookmark.id %>%">
+      <a href="/delete_interest/<%= the_bookmark.id %>">
         I'm not interested anymore
       </a>
     <% else %>
