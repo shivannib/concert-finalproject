@@ -7,10 +7,6 @@ class ArtistsController < ApplicationController
     render({ :template => "artists/index.html.erb" })
   end
 
-  def view_everything
-    render({ :template => "artists/viewall.html.erb" })
-  end
-
   def show
     the_id = params.fetch("path_id")
 

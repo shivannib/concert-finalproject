@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   get("/", { :controller => "user_authentication", :action => "home" })
 
-  # VIEW ALL ARTISTS AND CONCERTS
-  get("/view_all", { :controller => "artists", :action => "view_everything" })
-
   # Routes for the Interest resource:
 
   # CREATE
@@ -59,6 +56,9 @@ Rails.application.routes.draw do
   
   # DELETE
   get("/delete_artist/:path_id", { :controller => "artists", :action => "destroy" })
+
+  # VIEW ALL ARTISTS AND CONCERTS
+  get("/view_all", { :controller => "concerts", :action => "view_everything" })
 
   #------------------------------
 

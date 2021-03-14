@@ -7,6 +7,13 @@ class ConcertsController < ApplicationController
     render({ :template => "concerts/index.html.erb" })
   end
 
+  def view_everything
+    matching_concerts = Concert.all
+
+    @list_of_concerts = matching_concerts.order({ :created_at => :desc })
+    render({ :template => "concerts/viewall.html.erb" })
+  end
+
   def show
     the_id = params.fetch("path_id")
 
