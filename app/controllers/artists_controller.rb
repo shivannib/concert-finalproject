@@ -27,6 +27,7 @@ class ArtistsController < ApplicationController
     the_artist.genre = params.fetch("query_genre")
 
     if the_artist.valid?
+      #add something here that says that if it matches another existing name, it doesn't create the account
       the_artist.save
       redirect_to("/artists", { :notice => "Artist created successfully." })
     else
