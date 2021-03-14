@@ -18,6 +18,8 @@
       </div>
     </div>
 
+    <hr>
+
     <dl>
       <dt>
         Date
@@ -37,7 +39,7 @@
         Artist
       </dt>
       <dd>
-        <%= @the_concert.artist_id %>
+        <%= @the_artist.name %>
       </dd>
 
       <%# <dt>
@@ -63,8 +65,6 @@
     </dl>
   </div>
 </div>
-
-<hr>
 
 <hr>
  <% matching_bookmarks = Interest.where({ :user_id => @current_user.id, :concert_id => @the_concert.id }) %>
@@ -108,13 +108,13 @@
         <input type="text" id="city_box" name="query_city" value="<%= @the_concert.city %>">
       </div>
 
-      <div>
+      <%# div>
         <label for="artist_id_box">
           Artist
         </label>
 
-        <input type="text" id="artist_id_box" name="query_artist_id" value="<%= @the_concert.artist_id %>">
-      </div>
+        <input type="text" id="artist_id_box" name="query_artist_id" value="<%= @the_concert.artist_id %>
+      <%#/div>
 
       <%# <div>
         <label for="tour_id_box">

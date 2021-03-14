@@ -21,6 +21,10 @@ class ConcertsController < ApplicationController
 
     @the_concert = matching_concerts.at(0)
 
+    matching_artists = Artist.where({ :id => the_id })
+
+    @the_artist = matching_artists.at(0)
+
     render({ :template => "concerts/show.html.erb" })
   end
 
@@ -46,8 +50,8 @@ class ConcertsController < ApplicationController
 
     the_concert.date = params.fetch("query_date")
     the_concert.city = params.fetch("query_city")
-    the_concert.artist_id = params.fetch("query_artist_id")
-    the_concert.tour_id = params.fetch("query_tour_id")
+    #the_concert.artist_id = params.fetch("query_artist_id")
+    #the_concert.tour_id = params.fetch("query_tour_id")
 
     if the_concert.valid?
       the_concert.save
