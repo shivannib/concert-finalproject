@@ -5,11 +5,19 @@ class ConcertsController < ApplicationController
   end
   
   def index
+
+    #OLD CODE
+
     matching_concerts = Concert.all
 
     @list_of_concerts = matching_concerts.order({ :created_at => :desc })
 
     render({ :template => "concerts/index.html.erb" })
+
+    #NEW CODE
+    #@q = Concert.ransack(params[:q])
+    #@concerts = @q.result
+
   end
 
   def view_everything
