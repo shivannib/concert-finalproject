@@ -6,10 +6,6 @@
     <table>
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
           Date
         </th>
 
@@ -44,11 +40,7 @@
       <% @list_of_concerts.each do |a_concert| %>
       <tr>
         <td>
-          <%= a_concert.id %>
-        </td>
-
-        <td>
-          <%= a_concert.date %>
+          <%= a_concert.date.strftime("%A, %d %b %Y %l:%M %p") %>
         </td>
 
         <td>

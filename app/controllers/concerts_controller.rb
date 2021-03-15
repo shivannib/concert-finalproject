@@ -2,6 +2,10 @@ class ConcertsController < ApplicationController
   
   def home
     render({ :template => "concerts/home.html.erb" })
+
+    #NEW CODE
+    @q = Concert.ransack(params[:q])
+    @concerts = @q.result
   end
   
   def index
@@ -13,10 +17,6 @@ class ConcertsController < ApplicationController
     @list_of_concerts = matching_concerts.order({ :created_at => :desc })
 
     render({ :template => "concerts/index.html.erb" })
-
-    #NEW CODE
-    #@q = Concert.ransack(params[:q])
-    #@concerts = @q.result
 
   end
 

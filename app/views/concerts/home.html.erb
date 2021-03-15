@@ -3,3 +3,16 @@ i am the home page
 <div>
 search bar for artists, tours, concerts
 </div>
+
+<%= search_form_for @q do |f| %>
+  <p>Narrow results:</p>
+
+  <div>
+    <%= f.label :city_cont, "City containing" %>
+    <%= f.text_field :city_cont, :placeholder => "Enter a few characters" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+  
+  <a href="/">Clear filters</a>
+<% end %>

@@ -25,7 +25,7 @@
         Date
       </dt>
       <dd>
-        <%= @the_concert.date %>
+        <%= @the_concert.date.strftime("%A, %d %b %Y %l:%M %p") %>
       </dd>
 
       <dt>

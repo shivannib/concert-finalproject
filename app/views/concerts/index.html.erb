@@ -20,7 +20,7 @@
           Date
         </label>
 
-        <input type="date" id="date_box" name="query_date">
+        <input type="datetime-local" id="date_box" name="query_date">
       </div>
 
       <div>
@@ -124,7 +124,7 @@
       <tr>
 
         <td>
-          <%= a_concert.date %>
+          <%= a_concert.date.strftime("%A, %d %b %Y %l:%M %p") %>
         </td>
 
         <td>
