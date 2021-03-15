@@ -15,43 +15,24 @@ List of saved concerts and ticket sales, alert sent/not sent
 <div>
   <div>
     <h2>
-      Add a new interest
+      Interested In Adding More Concert Dates?
     </h2>
-
-    <form action="/insert_interest" method="post">
-      <div>
-        <label for="concert_id_box">
-          Concert Name
-        </label>
-
-        <input type="text" id="concert_id_box" name="query_concert_id">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <button>
-        Create interest
-      </button>
-    </form>
+    <div>
+    To find more concerts, go to the <a href="/view_all">View All Concerts</a> page to browse other concerts.
+    </div>
+    <div>
+    To add a new concert, go to the <a href="/concerts">Add New Concerts</a> page to add new concerts.
+    </div>
   </div>
 </div>
 
 <hr>
+<h2> List of Your Saved Concerts </h2>
 <div>
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
+       <th>
           Concert
         </th>
 
@@ -73,10 +54,6 @@ List of saved concerts and ticket sales, alert sent/not sent
 
       <% @list_of_interests.each do |an_interest| %>
       <tr>
-        <td>
-          <%= an_interest.id %>
-        </td>
-
         <td>
           <%= an_interest.concert_id %>
         </td>
