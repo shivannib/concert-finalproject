@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Concert #<%= @the_concert.id %> details
+      <%= @the_concert.name %>: Concert Details
     </h1>
 
     <div>
@@ -39,7 +39,14 @@
         Artist
       </dt>
       <dd>
-        <%= @the_artist.name %>
+        <%#= @the_artist.name %>
+      </dd>
+
+      <dt>
+        Concert Name
+      </dt>
+      <dd>
+        <%= @the_concert.name %>
       </dd>
 
       <%# <dt>
@@ -106,6 +113,14 @@
         </label>
 
         <input type="text" id="city_box" name="query_city" value="<%= @the_concert.city %>">
+      </div>
+
+      <div>
+        <label for="concert_name_box">
+          Concert Name
+        </label>
+
+        <input type="text" id="concert_name_box" name="query_concert_id" value="<%= @the_concert.name %>">
       </div>
 
       <%# div>

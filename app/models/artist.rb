@@ -14,4 +14,6 @@ class Artist < ApplicationRecord
 
   has_many(:concerts, { :class_name => "Concert", :foreign_key => "artist_id", :dependent => :destroy })
 
+  validates(:name, { :uniqueness => true })
+
 end

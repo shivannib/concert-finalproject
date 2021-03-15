@@ -20,7 +20,8 @@ class InterestsController < ApplicationController
   def create
     the_interest = Interest.new
     the_interest.concert_id = params.fetch("query_concert_id")
-    the_interest.user_id = params.fetch("query_user_id")
+    #the_interest.user_id = params.fetch("query_user_id")
+    the_interest.user_id = @current_user.id
 
     if the_interest.valid?
       the_interest.save
