@@ -23,4 +23,84 @@ Search for artists, cities, and concerts here:
 
 <% end %>
 
-<%#= @concerts then copy paste loop from index page %>
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+
+        <th>
+          Concert Date
+        </th>
+
+        <th>
+          Ticket Sale Date
+        </th>
+
+        <th>
+          Concert Name
+        </th>
+
+        <th>
+          City
+        </th>
+
+        <th>
+          Artist
+        </th>
+
+        <%# <th>
+          Tour
+        </th> %>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @concerts.each do |a_concert| %>
+      <tr>
+
+        <td>
+          <%= a_concert.date.strftime("%A, %d %b %Y %l:%M %p") %>
+        </td>
+
+        <td>
+          <%= a_concert.ticket_time.strftime("%A, %d %b %Y %l:%M %p") %>
+        </td>
+
+        <td>
+          <%= a_concert.name %>
+        </td>
+
+        <td>
+          <%= a_concert.city %>
+        </td>
+
+        <td>
+          <%= a_concert.artist.name %>
+        </td>
+
+        <%# <td>
+          <%= a_concert.tour_id %>
+        <%# </td> %>
+
+        <td>
+          <%= time_ago_in_words(a_concert.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/concerts/<%= a_concert.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

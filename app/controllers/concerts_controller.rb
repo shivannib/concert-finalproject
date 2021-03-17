@@ -5,6 +5,10 @@ class ConcertsController < ApplicationController
     @q = Concert.ransack(params[:q])
     @concerts = @q.result
 
+    matching_concerts = Concert.all
+
+    @list_of_concerts = matching_concerts.order({ :created_at => :desc })
+
     render({ :template => "concerts/home.html.erb" })
   end
   
