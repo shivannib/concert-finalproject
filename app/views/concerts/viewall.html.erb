@@ -10,6 +10,10 @@
         </th>
 
         <th>
+          Ticket Sale Date
+        </th>
+
+        <th>
           Concert Name
         </th>
 
@@ -26,10 +30,6 @@
         </th> %>
 
         <th>
-          Created at
-        </th>
-
-        <th>
           Updated at
         </th>
 
@@ -44,6 +44,10 @@
         </td>
 
         <td>
+          <%= a_concert.ticket_time.strftime("%A, %d %b %Y %l:%M %p") %>
+        </td>
+
+        <td>
           <%= a_concert.name %>
         </td>
 
@@ -52,16 +56,13 @@
         </td>
 
         <td>
-          <%= a_concert.artist_id %>
+          <%= a_concert.artist.name %>
         </td>
 
         <%# <td>
           <%= a_concert.tour_id %>
         <%# </td> %>
 
-        <td>
-          <%= time_ago_in_words(a_concert.created_at) %> ago
-        </td>
         <td>
           <%= time_ago_in_words(a_concert.updated_at) %> ago
         </td>

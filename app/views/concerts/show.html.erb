@@ -7,7 +7,13 @@
     <div>
       <div>
         <a href="/concerts">
-          Go back
+          Go back to the Add New Concerts page
+        </a>
+      </div>
+
+      <div>
+        <a href="/view_all">
+          Go back to the View All Concerts page
         </a>
       </div>
 
@@ -29,6 +35,13 @@
       </dd>
 
       <dt>
+        Ticket Sale Date
+      </dt>
+      <dd>
+        <%= @the_concert.ticket_time.strftime("%A, %d %b %Y %l:%M %p") %>
+      </dd>
+
+      <dt>
         City
       </dt>
       <dd>
@@ -39,7 +52,7 @@
         Artist
       </dt>
       <dd>
-        <%#= @the_artist.name %>
+        <%= @the_concert.artist.name %>
       </dd>
 
       <dt>
@@ -55,13 +68,6 @@
       <dd>
         <%= @the_concert.tour_id %>
       <%# </dd> %>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_concert.created_at) %> ago
-      </dd>
 
       <dt>
         Updated at
@@ -104,7 +110,17 @@
           Concert Date
         </label>
 
-        <input type="date" id="date_box" name="query_date" value="<%= @the_concert.date %>">
+        <input type="datetime-local" id="date_box" name="query_date" value="<%= @the_concert.date %>">
+        (Time is local to your timezone)
+      </div>
+
+      <div>
+        <label for="ticket_time_box">
+          Ticket Sale Date
+        </label>
+
+        <input type="datetime-local" id="ticket_time_box" name="query_ticket_time">
+        (Time is local to your timezone)
       </div>
 
       <div>

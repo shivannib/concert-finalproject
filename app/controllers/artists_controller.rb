@@ -10,9 +10,9 @@ class ArtistsController < ApplicationController
   def show
     the_id = params.fetch("path_id")
 
-    matching_artists = Artist.where({ :id => the_id })
+    @matching_artists = Artist.where({ :id => the_id })
 
-    @the_artist = matching_artists.at(0)
+    @the_artist = @matching_artists.at(0)
 
     render({ :template => "artists/show.html.erb" })
   end

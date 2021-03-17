@@ -6,16 +6,12 @@
   </div>
 </div>
 
-<div>
-List of saved concerts and ticket sales, alert sent/not sent
-</div>
-
 <hr>
 
 <div>
   <div>
     <h2>
-      Interested In Adding More Concert Dates?
+      Interested In Saving More Concert Dates?
     </h2>
     <div>
     To find more concerts, go to the <a href="/view_all">View All Concerts</a> page to browse other concerts.
@@ -32,16 +28,24 @@ List of saved concerts and ticket sales, alert sent/not sent
   <div>
     <table>
       <tr>
+        <th>
+          Concert Date
+        </th>
+
+        <th>
+          Ticket Sale Date
+        </th>
+      
        <th>
-          Concert
+          Concert Name
         </th>
 
         <th>
-          User
+          City
         </th>
 
         <th>
-          Created at
+          Artist
         </th>
 
         <th>
@@ -59,16 +63,25 @@ List of saved concerts and ticket sales, alert sent/not sent
       <% @list_of_interests.each do |an_interest| %>
       <tr>
         <td>
-          <%= an_interest.concert_id %>
+          <%= an_interest.concert.date.strftime("%A, %d %b %Y %l:%M %p") %>
         </td>
 
         <td>
-          <%= an_interest.user_id %>
+          <%= an_interest.concert.ticket_time.strftime("%A, %d %b %Y %l:%M %p") %>
         </td>
 
         <td>
-          <%= time_ago_in_words(an_interest.created_at) %> ago
+          <%= an_interest.concert.name %>
         </td>
+
+        <td>
+          <%= an_interest.concert.city %>
+        </td>
+
+        <td>
+          <%= an_interest.concert.artist.name %>
+        </td>
+
         <td>
           <%= time_ago_in_words(an_interest.updated_at) %> ago
         </td>

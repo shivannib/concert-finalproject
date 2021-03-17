@@ -7,7 +7,13 @@
     <div>
       <div>
         <a href="/artists">
-          Go back
+          Go back to the Add New Artists page
+        </a>
+      </div>
+
+      <div>
+        <a href="/view_all">
+          Go back to the View All Artists page
         </a>
       </div>
 
@@ -16,11 +22,6 @@
           Delete artist
         </a>
       </div>
-    </div>
-
-    <div>
-      Follow this artist to receive notifications any time a new concert is added in your city!
-      Follow button
     </div>
 
     <dl>
@@ -75,3 +76,32 @@
 </div>
 
 <hr>
+
+<h1><%= @the_artist.name %> Concerts</h1>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          Concert Date
+        </th>
+
+        <th>
+          Concert Name
+        </th>
+
+        <th>
+          City
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+Add loop here
