@@ -22,7 +22,7 @@
 
     <dl>
       <dt>
-        Date
+        Concert Date
       </dt>
       <dd>
         <%= @the_concert.date.strftime("%A, %d %b %Y %l:%M %p") %>
@@ -101,7 +101,7 @@
     <form action="/modify_concert/<%= @the_concert.id %>"  method="post" >
       <div>
         <label for="date_box">
-          Date
+          Concert Date
         </label>
 
         <input type="date" id="date_box" name="query_date" value="<%= @the_concert.date %>">
