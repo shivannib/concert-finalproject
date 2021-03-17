@@ -2,7 +2,6 @@ class ConcertsController < ApplicationController
   
   def home
 
-    #NEW CODE
     @q = Concert.ransack(params[:q])
     @concerts = @q.result
 
@@ -10,8 +9,6 @@ class ConcertsController < ApplicationController
   end
   
   def index
-
-    #OLD CODE
 
     matching_concerts = Concert.all
 
@@ -22,9 +19,14 @@ class ConcertsController < ApplicationController
   end
 
   def view_everything
-    matching_concerts = Concert.all
+    matching_concerts = Concert.all.order({ :date => :asc, :name => :asc, :city => :desc })
 
     @list_of_concerts = matching_concerts.order({ :created_at => :desc })
+
+    matching_artists = Artist.all
+
+    @list_of_artists = matching_artists.order({ :created_at => :desc })
+    
     render({ :template => "concerts/viewall.html.erb" })
   end
 

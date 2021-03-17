@@ -78,3 +78,47 @@
 </div>
 
 <hr>
+
+<h1>All Artists</h1>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Genre
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_artists.each do |an_artist| %>
+      <tr>
+
+        <td>
+          <%= an_artist.name %>
+        </td>
+
+        <td>
+          <%= an_artist.genre %>
+        </td>
+
+        <td>
+          <a href="/artists/<%= an_artist.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
