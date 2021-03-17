@@ -14,6 +14,16 @@ class InterestsController < ApplicationController
 
     @the_interest = matching_interests.at(0)
 
+    #Added Code
+
+    #matching_concerts = Concert.where({ :id => the_id })
+
+    #@the_concert = matching_concerts.at(0)
+
+    #matching_artists = Artist.where({ :id => the_id })
+
+    #@the_artist = matching_artists.at(0)
+
     render({ :template => "interests/show.html.erb" })
   end
 
