@@ -5,11 +5,11 @@ Search for artists, cities, and concerts here:
 <hr>
 
 <%= search_form_for @q, :url => "/" do |f| %>
-  <p>Narrow results:</p>
+  <p>Narrow results by using one or all of these categories:</p>
 
   <div>
-    <%= f.label :city_eq, "City matching" %>
-    <%= f.text_field :city_eq, :placeholder => "Enter a few characters" %>
+    <%= f.label :city_cont, "City matching" %>
+    <%= f.text_field :city_cont, :placeholder => "Enter a few characters" %>
   </div>
 
   <div>
@@ -102,5 +102,3 @@ Search for artists, cities, and concerts here:
     </table>
   </div>
 </div>
-
-<hr>
