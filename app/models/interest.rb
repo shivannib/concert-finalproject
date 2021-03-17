@@ -3,6 +3,7 @@
 # Table name: interests
 #
 #  id         :integer          not null, primary key
+#  alert_sent :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  concert_id :integer

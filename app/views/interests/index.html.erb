@@ -49,6 +49,10 @@ List of saved concerts and ticket sales, alert sent/not sent
         </th>
 
         <th>
+          Alert sent
+        </th>
+
+        <th>
         </th>
       </tr>
 
@@ -67,6 +71,10 @@ List of saved concerts and ticket sales, alert sent/not sent
         </td>
         <td>
           <%= time_ago_in_words(an_interest.updated_at) %> ago
+        </td>
+
+        <td>
+          <%= an_interest.alert_sent %>
         </td>
 
         <td>

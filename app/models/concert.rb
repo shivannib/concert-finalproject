@@ -20,4 +20,9 @@ class Concert < ApplicationRecord
 
   belongs_to(:tour, { :required => false, :class_name => "Tour", :foreign_key => "tour_id" })  
 
+  validates(:city, { :presence => true })
+  validates(:date, { :presence => true })
+  validates(:name, { :presence => true })
+  validates(:ticket_time, { :presence => true })
+
 end

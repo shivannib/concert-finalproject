@@ -18,13 +18,17 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    the_artist = Artist.new
-    the_artist.name = params.fetch("query_name")
-    the_artist.genre = params.fetch("query_genre")
+      the_artist = Artist.new
+      the_artist.name = params.fetch("query_name")
+      the_artist.genre = params.fetch("query_genre")
 
     if the_artist.valid?
-      the_artist.save
-      redirect_to("/artists", { :notice => "Artist created successfully." })
+      #if the_artist.name != nil
+        the_artist.save
+        redirect_to("/artists", { :notice => "Artist created successfully." })
+      #else
+        #Artist name cannot be blank
+      #end
     else
       redirect_to("/artists", { :notice => "Artist failed to create successfully." })
     end
