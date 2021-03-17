@@ -4,7 +4,7 @@ Search for artists, cities, and concerts here:
 
 <hr>
 
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, :url => "/" do |f| %>
   <p>Narrow results:</p>
 
   <div>
@@ -20,4 +20,7 @@ Search for artists, cities, and concerts here:
   <%= f.submit :class => "btn btn-primary btn-block" %>
   
   <a href="/">Clear filters</a>
+
 <% end %>
+
+<%#= @concerts then copy paste loop from index page %>

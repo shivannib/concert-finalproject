@@ -140,7 +140,7 @@
         </td>
 
         <td>
-          <%#= a_concert.ticket_time.strftime("%A, %d %b %Y %l:%M %p") %>
+          <%= a_concert.ticket_time.strftime("%A, %d %b %Y %l:%M %p") %>
         </td>
 
         <td>
@@ -152,7 +152,7 @@
         </td>
 
         <td>
-          <%= a_concert.artist_id %>
+          <%= a_concert.artist.name %>
         </td>
 
         <%# <td>
