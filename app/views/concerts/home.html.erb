@@ -1,15 +1,20 @@
-i am the home page
+<h1> Home </h1>
 
-<div>
-search bar for artists, tours, concerts
-</div>
+Search for artists, cities, and concerts here:
+
+<hr>
 
 <%= search_form_for @q do |f| %>
   <p>Narrow results:</p>
 
   <div>
-    <%= f.label :city_cont, "City containing" %>
-    <%= f.text_field :city_cont, :placeholder => "Enter a few characters" %>
+    <%= f.label :city_eq, "City matching" %>
+    <%= f.text_field :city_eq, :placeholder => "Enter a few characters" %>
+  </div>
+
+  <div>
+    <%= f.label :name_cont, "Concert name matching" %>
+    <%= f.text_field :name_cont, :placeholder => "Enter a few characters" %>
   </div>
 
   <%= f.submit :class => "btn btn-primary btn-block" %>

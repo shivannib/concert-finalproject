@@ -1,11 +1,12 @@
 class ConcertsController < ApplicationController
   
   def home
-    render({ :template => "concerts/home.html.erb" })
 
     #NEW CODE
     @q = Concert.ransack(params[:q])
     @concerts = @q.result
+
+    render({ :template => "concerts/home.html.erb" })
   end
   
   def index
