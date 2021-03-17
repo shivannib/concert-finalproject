@@ -45,8 +45,7 @@ class ConcertsController < ApplicationController
   def create
     the_concert = Concert.new
     the_concert.date = params.fetch("query_date")
-    #the_concert.time = params.fetch("query_time") undefined method for time ?
-    #how do i add the datetime aspect of the date
+    #the_concert.ticket_time = params.fetch("query_ticket_time")
     the_concert.city = params.fetch("query_city")
     the_concert.artist_id = params.fetch("query_artist_id")
     the_concert.name = params.fetch("query_concert_id")
