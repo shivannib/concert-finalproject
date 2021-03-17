@@ -23,6 +23,6 @@ class Concert < ApplicationRecord
   validates(:city, { :presence => true })
   validates(:date, { :presence => true })
   validates(:name, { :presence => true })
-  validates(:ticket_time, { :presence => true })
+  #validates(:ticket_time, { :presence => true })
 
 end
