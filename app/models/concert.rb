@@ -2,14 +2,15 @@
 #
 # Table name: concerts
 #
-#  id         :integer          not null, primary key
-#  city       :string
-#  date       :datetime
-#  name       :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  artist_id  :integer
-#  tour_id    :integer
+#  id          :integer          not null, primary key
+#  city        :string
+#  date        :datetime
+#  name        :text
+#  ticket_time :datetime
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  artist_id   :integer
+#  tour_id     :integer
 #
 class Concert < ApplicationRecord
 
