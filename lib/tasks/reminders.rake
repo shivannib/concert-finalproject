@@ -1,6 +1,5 @@
 task({ :send_reminders => :environment }) do
-  p Interest.count
-
+  
   cutoff_time = 1.hour.from_now
   within_window = Interest.where ("ticket_time < ?", cutoff_time)
 
