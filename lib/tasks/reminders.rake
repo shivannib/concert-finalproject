@@ -1,7 +1,7 @@
 task({ :send_reminders => :environment }) do
   
   cutoff_time = 1.hour.from_now
-  within_window = Interest.where ("ticket_time < ?", cutoff_time)
+  within_window = Interest.where("ticket_time < ?", cutoff_time)
 
   need_reminders = within_window.where({ :alert_sent => false })
 
@@ -19,7 +19,7 @@ task({ :send_reminders => :environment }) do
       # Craft your SMS as a Hash with three keys
       sms_parameters = {
         :from => twilio_sending_number,
-        :to => "+14088395334",
+        :to => "+14088395334", #would @current_user.phone_number work here? should i add a to_i
         :body => "It's going to rain today — take an umbrella!"
       }
 
