@@ -1,20 +1,20 @@
 <h1> Home </h1>
 
-Search for artists, cities, and concerts here:
+Search for cities and concerts here:
 
 <hr>
 
 <%= search_form_for @q, :url => "/" do |f| %>
-  <p>Narrow results by using one or all of these categories:</p>
+  <p>Narrow down results by using one or both of these categories:</p>
 
   <div>
-    <%= f.label :city_cont, "City matching" %>
-    <%= f.text_field :city_cont, :placeholder => "Enter a few characters" %>
+    <%= f.label :city_cont, "City" %>
+    <%= f.text_field :city_cont, :placeholder => "Enter a city name" %>
   </div>
 
   <div>
-    <%= f.label :name_cont, "Concert name matching" %>
-    <%= f.text_field :name_cont, :placeholder => "Enter a few characters" %>
+    <%= f.label :name_cont, "Concert/Tour Name" %>
+    <%= f.text_field :name_cont, :placeholder => "Enter a concert/tour name" %>
   </div>
 
   <%= f.submit :class => "btn btn-primary btn-block" %>
