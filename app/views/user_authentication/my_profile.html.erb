@@ -8,6 +8,13 @@
   Phone Number: <%= @current_user.phone_number %>
 </div>
 
+<div>
+  Name: <%= @current_user.name %>
+</div>
+
+<hr>
+
+<h4> Update your information here: </h4>
 
 <div>
   <form action="/modify_home_city" method="post">
@@ -32,6 +39,20 @@
     </button>
   </form>
 </div>
+
+<div>
+  <form action="/modify_name" method="post">
+    
+    <label for="name_box">Name</label>
+    <input id="name_box" name="query_name" placeholder="Enter a new name">
+
+    <button>
+        Update name
+    </button>
+  </form>
+</div>
+
+<hr>
 
 <div>
   See all your saved concerts <a href="/interests">here</a>.

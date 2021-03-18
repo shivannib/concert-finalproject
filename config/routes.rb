@@ -117,6 +117,8 @@ Rails.application.routes.draw do
   post("/modify_home_city", { :controller => "user_authentication", :action => "update_home_city" })
   # UPDATE PHONE NUMBER
   post("/modify_phone_number", { :controller => "user_authentication", :action => "update_phone_number" })
+  # UPDATE Name
+  post("/modify_name", { :controller => "user_authentication", :action => "update_name" })
   
   # DELETE RECORD
   get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
