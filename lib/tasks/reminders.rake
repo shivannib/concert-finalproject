@@ -7,8 +7,16 @@ task({ :send_reminders => :environment }) do
 
   # Create an instance of the Twilio Client and authenticate with your API key
   twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
-  
 
+  matching_interests = Interest.where({ :id => 7 })
+  interest_record = matching_interests.at(0)
+  matching_concerts = Concert.where({ :id => interest_record.concert_id })
+  concert_record = matching_concerts.at(0)
+
+  matching_users = User.where({ :id => interest_record.user_id })
+  user_record = matching_users.at(0)
+  interested_user = user_record.phone_number
+  
   cutoff_time = 1.hour.from_now
   within_window = Concert.where("ticket_time < ?", cutoff_time)
 
@@ -22,8 +30,8 @@ task({ :send_reminders => :environment }) do
         # Craft your SMS as a Hash with three keys
         sms_parameters = {
           :from => twilio_sending_number,
-          :to => @current_user.phone_number, 
-          :body => "Ticket sales start in an hour - get ready!" #how do I make this specific to the concert?
+          :to => interested_user, #editing
+          :body => "Ticket sales start in an hour - get ready!" #make concert specific?
         }
 
         # Send your SMS!
