@@ -25,12 +25,12 @@ class ConcertsController < ApplicationController
   end
 
   def view_everything
-    matching_concerts = Concert.ApplicationController
+    matching_concerts = Concert.ApplicationController.order({ :created_at => :desc })
     #.order({ :date => :asc, :name => :asc, :city => :desc })
 
     @list_of_concerts = matching_concerts.order({ :created_at => :desc })
 
-    matching_artists = Artist.ApplicationController
+    matching_artists = Artist.ApplicationController.order({ :created_at => :desc })
     #.order({ :date => :asc, :name => :asc, :city => :desc })
 
     @list_of_artists = matching_artists.order({ :created_at => :desc })
