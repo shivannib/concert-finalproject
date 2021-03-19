@@ -2,7 +2,8 @@ class InterestsController < ApplicationController
   def index
     matching_interests = @current_user.interests
 
-    @list_of_interests = matching_interests.order({ :date => :asc, :name => :asc, :city => :desc })
+    @list_of_interests = matching_interests
+    # .order({ :date => :asc, :name => :asc, :city => :desc })
 
     render({ :template => "interests/index.html.erb" })
   end

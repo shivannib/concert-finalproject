@@ -3,11 +3,13 @@ class ConcertsController < ApplicationController
   def home
 
     @q = Concert.ransack(params[:q])
-    @concerts = @q.result.order({ :date => :asc, :name => :asc, :city => :desc })
+    @concerts = @q.result
+    #.order({ :date => :asc, :name => :asc, :city => :desc })
 
     matching_concerts = Concert.all
 
-    @list_of_concerts = matching_concerts.order({ :date => :asc, :name => :asc, :city => :desc })
+    @list_of_concerts = matching_concerts
+    #.order({ :date => :asc, :name => :asc, :city => :desc })
 
     render({ :template => "concerts/home.html.erb" })
   end
@@ -23,11 +25,13 @@ class ConcertsController < ApplicationController
   end
 
   def view_everything
-    matching_concerts = Concert.all.order({ :date => :asc, :name => :asc, :city => :desc })
+    matching_concerts = Concert.ApplicationController
+    #.order({ :date => :asc, :name => :asc, :city => :desc })
 
     @list_of_concerts = matching_concerts.order({ :created_at => :desc })
 
-    matching_artists = Artist.all.order({ :date => :asc, :name => :asc, :city => :desc })
+    matching_artists = Artist.ApplicationController
+    #.order({ :date => :asc, :name => :asc, :city => :desc })
 
     @list_of_artists = matching_artists.order({ :created_at => :desc })
     
