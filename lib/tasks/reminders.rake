@@ -7,15 +7,6 @@ task({ :send_reminders => :environment }) do
 
   # Create an instance of the Twilio Client and authenticate with your API key
   twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
-
-  matching_interests = Interest.where({ :id => 7 })
-  interest_record = matching_interests.at(0)
-  matching_concerts = Concert.where({ :id => interest_record.concert_id })
-  concert_record = matching_concerts.at(0)
-
-  matching_users = User.where({ :id => interest_record.user_id })
-  user_record = matching_users.at(0)
-  interested_user = user_record.phone_number
   
   cutoff_time = 1.hour.from_now
   within_window = Concert.where("ticket_time < ?", cutoff_time)
@@ -24,6 +15,15 @@ task({ :send_reminders => :environment }) do
     
     bookmarked_interests = a_concert.interests
     need_reminders = bookmarked_interests.where({ :alert_sent => false })
+
+    matching_interests = Interest.where({ :id => a_concert.id })
+    interest_record = matching_interests.at(0)
+    matching_concerts = Concert.where({ :id => interest_record.concert_id })
+    concert_record = matching_concerts.at(0)
+
+    matching_users = User.where({ :id => interest_record.user_id })
+    user_record = matching_users.at(0)
+    interested_user = user_record.phone_number
 
     need_reminders.each do |a_interest|
   
